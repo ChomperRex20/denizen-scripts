@@ -89,7 +89,7 @@ autoseller_events:
       - wait 1t
 
       # Sell item
-      - define active_player <[item].flag[autoseller_player].if_null[<[item].proc[get_old_nbt_map].get[player]>]>
+      - define active_player <[active].flag[autoseller_player].if_null[<[active].proc[get_old_nbt_map].get[player]>]>
       - if <[active_player].exists>:
         - money give to:<player[<[active_player]>]> quantity:<[item].worth.mul[<[item].quantity>]>
         - take item:<[item].material.name> quantity:<[item].quantity> from:<context.destination>
