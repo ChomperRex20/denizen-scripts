@@ -43,7 +43,7 @@ tablist_config:
   footer:
     - <&sp>
 
-player_list_name:
+player_list_name_old:
   type: procedure
   debug: false
   definitions: player
@@ -56,6 +56,20 @@ player_list_name:
         - define d <script[prefixes].parsed_key[data.<[rank]>]>
         - determine "<&7> [<[d].get[color]><[d].get[name]><&7>] <&r><[player].name>"
     - determine "<&r> <[player].name>"
+
+player_list_name:
+  type: procedure
+  debug: false
+  definitions: player
+  script:
+    - if <[player].in_group[gm]>:
+      - define c <script[prefixes].parsed_key[data.gm.color]>
+      - determine "<&7> [<[c]>GM<&7>] <&r><&gradient[from=<[c]>;to=<&f>]><[player].name>"
+    - foreach admin|moderator|helper|dev|builder|svip as:rank:
+      - if <[player].in_group[<[rank]>]>:
+        - define d <script[prefixes].parsed_key[data.<[rank]>]>
+        - determine "<&7> [<[d].get[color]><[d].get[name]><&7>] <&r><&gradient[from=<[d].get[color]>;to=<&f>]><[player].name>"
+    - determine "<&r> <&gradient[from=<&7>;to=<&f>]><[player].name>"
 
 player_list_name_2:
   type: procedure

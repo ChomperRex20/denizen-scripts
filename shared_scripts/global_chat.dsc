@@ -308,7 +308,10 @@ global_chat_events:
         - if <[suffix].length> > 0:
           - define suffix "<[suffix]> "
         - define name <[map].get[display_name]>
-        - determine "message:<[prefix]><[name]> <[map].get[flair_style]><[suffix]><&7><&chr[BB]> <&f><[map].get[message]>"
+        - if <player.name> != Mergu:
+          - determine "message:<[prefix]><[name]> <[map].get[flair_style]><[suffix]><&7><&chr[BB]> <&f><[map].get[message]>"
+        - else:
+          - determine "message:<&c>X<&r> <[prefix]><[name]> <[map].get[flair_style]><[suffix]><&7><&chr[BB]> <&f><[map].get[message]>"
       - if <[message].starts_with[PARTY_MESSAGE]>:
         - choose <[map].get[rank]>:
           - case Admin:

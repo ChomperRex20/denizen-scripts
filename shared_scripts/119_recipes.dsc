@@ -1811,8 +1811,8 @@ warden_armor_world:
         - if <player.has_equipped[warden_chestplate]>:
           - playeffect effect:sculk_soul quantity:<util.random.int[1].to[5]> at:<player.location>
           - playsound <player.location> sound:entity_warden_heartbeat volume:1.5
-        - if <player.has_equipped[warden_boots]>:
-          - playeffect effect:sculk_charge quantity:<util.random.int[1].to[5]> at:<player.location>
+        #- if <player.has_equipped[warden_boots]>:
+        #  - playeffect effect:sculk_charge quantity:<util.random.int[1].to[5]> at:<player.location>
         - if <player.has_equipped[warden_leggings]>:
           - playeffect effect:white_ash quantity:<util.random.int[1].to[5]> at:<player.location>
 
