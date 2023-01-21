@@ -17,17 +17,6 @@ skin_restore:
     - foreach <server.online_players>:
       - adjust <[value]> skin:<[value].name>
 
-no_portal_world:
-  type: world
-  debug: false
-  events:
-    on portal created:
-    - if <context.entity.location.world> == <world[s3]> || <context.entity.location.world> == <world[s3_nether]>:
-      - stop
-    - if <context.entity.name> == greenleeuw || <context.entity.name> == nasfi || <context.entity.name> == mergu || <context.entity.name> == Mayor_Disney:
-      - stop
-    - determine cancelled
-
 inf_slime:
   type: entity
   debug: false
