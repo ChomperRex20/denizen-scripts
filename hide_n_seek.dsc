@@ -42,7 +42,6 @@ hns_game_create:
         - flag player host
         - flag server hnsnarrate:->:<player>
         - flag server hnsgamestart:!
-        #- narrate "You have created a hide and seek game!"
         - announce "<yellow><bold><player.name> <aqua>has created a Hide and Seek event, use /has join' to join!"
 
 
