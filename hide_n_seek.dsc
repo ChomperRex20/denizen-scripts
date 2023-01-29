@@ -86,7 +86,7 @@ hns_round_start:
     - if <server.flag[hiders].size> < 2:
       - narrate "<yellow>you dont have enough friends"
       - stop
-    - Narrate "<red><bold><player.name><aqua> has started the game, find your hiding spot <red><bold>quick! <aqua> You have 60 seconds" targets:<server.flag[hns_narrate]>
+    - narrate "<red><bold><player.name><aqua> has started the game, find your hiding spot <red><bold>quick! <aqua> You have 60 seconds" targets:<server.flag[hns_narrate]>
     - cast blindness duration:60 amplifier:255 <player>
     - cast slow duration:60 amplifier:255 <player>
     - cast glowing duration:10000 amplifier:255 <player>
@@ -157,9 +157,9 @@ hns_leave:
       - run remove_hns_player
       - stop
     - if <player.has_flag[host]>:
-      - Narrate "<yellow>You can not leave, you are the host"
+      - narrate "<yellow>You can not leave, you are the host"
       - stop
-    - Narrate "<yellow>You are not in a Hide and Seek game"
+    - narrate "<yellow>You are not in a Hide and Seek game"
 
 hns_hiders:
   type: task
@@ -192,7 +192,7 @@ hider_hit_by_seeker:
       - if <player.target> in !<server.flag[hiders]>:
         - stop
       - if <player.has_flag[host]> || ( <server.has_flag[seekers]> && <player> in <server.flag[seekers]> ):
-        - Narrate "<dark_green><bold><player.target.name><aqua> has been found, they are now a <red><bold>Seeker!" targets:<server.flag[hns_narrate]>
+        - narrate "<dark_green><bold><player.target.name><aqua> has been found, they are now a <red><bold>Seeker!" targets:<server.flag[hns_narrate]>
         - narrate "<red>Right click hiding players to mark them as found!" targets:<player.target>
         - flag server hiders:<-:<player.target>
         - flag server seekers:->:<player.target>
