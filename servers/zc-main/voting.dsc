@@ -49,6 +49,7 @@ voting_prizes:
       - paper[custom_model_data=5000;display_name=Lon Lon Milk Jar;quantity=5]
       - paper[custom_model_data=16005;display_name=King's Crown]
       - paper[custom_model_data=16006;display_name=Loftwing Plushie]
+      - paper[custom_model_data=16007;display_name=Octorock Plushie]
       - paper[custom_model_data=7000;display_name=DCaff95 Plushie]
       - paper[custom_model_data=7100;display_name=Mergu Plushie]
       - paper[custom_model_data=8400;display_name=EyelessTenshi Plushie]
